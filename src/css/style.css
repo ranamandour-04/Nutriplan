@@ -1,0 +1,8 @@
+/* @import "tailwindcss"; */
+.loading {
+  display: none;
+}
+.active {
+  background: #ecfdf5;
+  color: #007a55;
+}
