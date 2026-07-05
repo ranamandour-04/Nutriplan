@@ -130,6 +130,7 @@ navLinks.forEach(function (btn) {
       logSection.classList.add("hidden");
       mealsContainer.classList.add("hidden");
       mealCategoriesSection.classList.add("hidden");
+      mealDetailsContainer.classList.add("hidden");
       searchFiltersSection.classList.add("hidden");
       allRecipesSection.classList.add("hidden");
       title.innerHTML = "Product Scanner";
@@ -142,6 +143,7 @@ navLinks.forEach(function (btn) {
       logSection.classList.add("hidden");
       productsSection.classList.add("hidden");
       mealsContainer.classList.remove("hidden");
+      mealDetailsContainer.classList.add("hidden");
       mealCategoriesSection.classList.remove("hidden");
       searchFiltersSection.classList.remove("hidden");
       allRecipesSection.classList.remove("hidden");
