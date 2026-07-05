@@ -153,6 +153,7 @@ navLinks.forEach(function (btn) {
     }
   });
 });
+
 updateTodayDate();
 fetchAllMeals();
 // * meals fetch and display
