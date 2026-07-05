@@ -115,6 +115,7 @@ navLinks.forEach(function (btn) {
       mealsContainer.classList.add("hidden");
       productsSection.classList.add("hidden");
       mealCategoriesSection.classList.add("hidden");
+      mealDetailsContainer.classList.add("hidden");
       searchFiltersSection.classList.add("hidden");
       allRecipesSection.classList.add("hidden");
       title.innerHTML = "Food Log";
