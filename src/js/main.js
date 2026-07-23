@@ -26,7 +26,6 @@ const searchInput = document.querySelector("#search-input");
 const categoryButtons = document.querySelectorAll(".category-card");
 const categoriesGrid = document.querySelector("#categories-grid");
 const headerMenuBtn = document.querySelector("#header-menu-btn");
-const sidebar = document.querySelector("#sidebar");
 const filterBtnsContainer = document.querySelector("#filter-btns");
 const listviewBtn = document.querySelector("#list-view-btn");
 const gridViewBtn = document.querySelector("#grid-view-btn");
@@ -51,12 +50,19 @@ const logCardModal = document.querySelector("#log-card-modal");
 const productModal = document.querySelector("#productModal");
 const productModalbg = document.querySelector("#productModalbg");
 const modalbg = document.querySelector("#modalbg");
+const closeBtn = document.getElementById("sidebar-close-btn");
 let allCurrentProducts = [];
 let logMeals = JSON.parse(localStorage.getItem("meals")) || [];
 let serivingCounter = 1;
 const clearFoodlog = document.querySelector("#clear-foodlog");
 const loggedItemsContainer = document.querySelector("#logged-items-list");
 const loggedItemsCounter = document.querySelector("#loggedItemsCounter");
+closeBtn.addEventListener("click", function () {
+  sideBar.classList.toggle("open");
+});
+headerMenuBtn.addEventListener("click", function () {
+  sideBar.classList.toggle("open");
+});
 clearFoodlog.addEventListener("click", function () {
   localStorage.clear();
   loggedItemsCounter.innerHTML = `(0)`;
@@ -108,6 +114,8 @@ quickActionProduct.addEventListener("click", function () {
 });
 navLinks.forEach(function (btn) {
   btn.addEventListener("click", function () {
+    sideBar.classList.remove("open");
+
     if (btn.getAttribute("data-link") === "log") {
       navLinks.forEach((link) => link.classList.remove("active"));
       btn.classList.add("active");
@@ -153,7 +161,6 @@ navLinks.forEach(function (btn) {
     }
   });
 });
-
 updateTodayDate();
 fetchAllMeals();
 // * meals fetch and display
