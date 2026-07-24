@@ -1382,17 +1382,17 @@ function displayLoggedItems() {
 
         return `
          <!-- Single Card Item -->
-<div class="w-full flex flex-col card-row-md justify-between gap-4 p-4 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md transition-all">
+<div class="w-full flex flex-col card-row-md justify-between gap-4 p-5 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md transition-all">
   <!-- Left Section: Image & Details -->
   <div class="flex items-center gap-4 md:w-auto md:flex-1">
     ${mediaHTML}
 
     <!-- Text Details -->
     <div class="flex flex-col md:max-w-[70%]">
-      <h4 class="font-bold md:max-w-[70%] text-gray-900 text-[15px] leading-tight ">
+      <h4 class="font-bold text-gray-900 text-[15px] leading-tight ">
         ${name}
       </h4>
-      <p class="text-[13px] text-gray-500 mt-0.5 ">
+      <p class="text-[13px] text-gray-500 mt-0.5">
         ${subtitle} • <span class="font-medium ${badgeColorClass}">${badgeText}</span>
       </p>
       <span class="text-[11px] text-gray-400 mt-1">${time}</span>
@@ -1400,7 +1400,7 @@ function displayLoggedItems() {
   </div>
 
   <!-- Right Section: Analytics & Controls -->
-  <div class="flex items-center justify-center md:justify-between gap-6">
+  <div class="flex items-center justify-center md:justify-between gap-5">
     <!-- Calories -->
     <div class="flex flex-col items-center justify-center">
       <span class="block text-xl font-bold text-emerald-600 leading-none">${Math.round(calories)}</span>
