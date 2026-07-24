@@ -1389,10 +1389,10 @@ function displayLoggedItems() {
 
     <!-- Text Details -->
     <div class="flex flex-col md:max-w-[70%]">
-      <h4 class="font-bold text-gray-900 text-[15px] leading-tight truncate">
+      <h4 class="font-bold md:max-w-[70%] text-gray-900 text-[15px] leading-tight ">
         ${name}
       </h4>
-      <p class="text-[13px] text-gray-500 mt-0.5 truncate">
+      <p class="text-[13px] text-gray-500 mt-0.5 ">
         ${subtitle} • <span class="font-medium ${badgeColorClass}">${badgeText}</span>
       </p>
       <span class="text-[11px] text-gray-400 mt-1">${time}</span>
