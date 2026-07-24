@@ -6,3 +6,9 @@
   background: #ecfdf5;
   color: #007a55;
 }
+@media (min-width: 768px) {
+  .card-row-md {
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+}

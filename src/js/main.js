@@ -1107,14 +1107,12 @@ function displayProductDetails(data) {
           >
             <div class="flex items-center gap-4">
               <!-- Product Image Container -->
-              <div
-                class="w-40 h-40 bg-white rounded-xl p-1 flex items-center justify-center border border-gray-100 flex-shrink-1"
-              >
+              <div class="w-20 aspect-square bg-white rounded-xl p-1.5 flex items-center justify-center border border-gray-100 flex-shrink-0">
                 <img
-                  src=${data.image}
-                  alt='${data.name}'
-                  class="max-w-[20px] rounded-xl max-h-full object-contain"
-                />
+                  src="${data.image}"
+                 alt="${data.name}"
+                 class="w-full h-full rounded-lg object-contain"
+                               />
               </div>
               <!-- Title and Badges -->
               <div>
@@ -1147,7 +1145,7 @@ function displayProductDetails(data) {
                   </div>
                   <!-- NOVA Badge Box -->
                   <div
-                    class="flex items-center justify-between p-2 rounded-lg overflow-hidden border text-[11px] font-bold"
+                    class="flex items-center justify-between p-2 rounded-lg overflow-hidden border text-[9px] font-semi"
                     style="border-color: #fdba74; background-color: #fff7ed"
                   >
                     <span
@@ -1193,7 +1191,7 @@ function displayProductDetails(data) {
 
             <!-- Big Calories Number Display -->
             <div class="text-center mb-5">
-              <p class="text-3xl font-bold text-gray-900 tracking-tight">${data.nutrients.calories}</p>
+              <p class="text-3xl font-bold text-gray-900 tracking-tight">${data.nutrients.calories.toFixed(2)}</p>
               <p class="text-[11px] font-medium text-gray-400 mt-0.5">
                 Calories
               </p>
@@ -1219,7 +1217,7 @@ function displayProductDetails(data) {
                   style="background-color: #3b82f6"
                 ></div>
                 <p class="text-sm font-bold text-center" style="color: #3b82f6">
-                  ${data.nutrients.carbs}g
+                  ${data.nutrients.carbs.toFixed(2)}g
                 </p>
                 <p class="text-[10px] font-medium text-center text-gray-400">
                   Carbs
@@ -1231,7 +1229,7 @@ function displayProductDetails(data) {
                   style="background-color: #a855f7"
                 ></div>
                 <p class="text-sm font-bold text-center" style="color: #a855f7">
-                  ${data.nutrients.fat}g
+                  ${data.nutrients.fat.toFixed(2)}g
                 </p>
                 <p class="text-[10px] font-medium text-center text-gray-400">
                   Fat
@@ -1243,7 +1241,7 @@ function displayProductDetails(data) {
                   style="background-color: #f97316"
                 ></div>
                 <p class="text-sm font-bold text-center" style="color: #f97316">
-                  ${data.nutrients.sugar}g
+                  ${data.nutrients.sugar.toFixed(2)}g
                 </p>
                 <p class="text-[10px] font-medium text-center text-gray-400">
                   Sugar
@@ -1262,7 +1260,7 @@ function displayProductDetails(data) {
                 </p>
               </div>
               <div>
-                <p class="text-xs font-bold text-gray-800">${data.nutrients.fiber}g</p>
+                <p class="text-xs font-bold text-gray-800">${data.nutrients.fiber.toFixed(2)}g</p>
                 <p class="text-[10px] font-medium text-gray-400">Fiber</p>
               </div>
               <div>
@@ -1383,51 +1381,51 @@ function displayLoggedItems() {
           });
 
         return `
-          <!-- Single Card Item -->
-          <div class="w-full flex flex-row items-center justify-between p-4 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <!-- Left Section: Image & Details -->
-            <div class="flex items-center gap-4">
-              ${mediaHTML}
+         <!-- Single Card Item -->
+<div class="w-full flex flex-col card-row-md justify-between gap-4 p-4 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md transition-all">
+  <!-- Left Section: Image & Details -->
+  <div class="flex items-center gap-4 md:w-auto md:flex-1">
+    ${mediaHTML}
 
-              <!-- Text Details -->
-              <div class="flex flex-col">
-                <h4 class="font-bold text-gray-900 text-[15px] leading-tight">
-                  ${name}
-                </h4>
-                <p class="text-[13px] text-gray-500 mt-0.5">
-                  ${subtitle} • <span class="font-medium ${badgeColorClass}">${badgeText}</span>
-                </p>
-                <span class="text-[11px] text-gray-400 mt-1">${time}</span>
-              </div>
-            </div>
+    <!-- Text Details -->
+    <div class="flex flex-col md:max-w-[70%]">
+      <h4 class="font-bold text-gray-900 text-[15px] leading-tight truncate">
+        ${name}
+      </h4>
+      <p class="text-[13px] text-gray-500 mt-0.5 truncate">
+        ${subtitle} • <span class="font-medium ${badgeColorClass}">${badgeText}</span>
+      </p>
+      <span class="text-[11px] text-gray-400 mt-1">${time}</span>
+    </div>
+  </div>
 
-            <!-- Right Section: Analytics & Controls -->
-            <div class="flex items-center gap-6">
-              <!-- Calories -->
-              <div class="flex flex-col items-center justify-center">
-                <span class="block text-xl font-bold text-emerald-600 leading-none">${Math.round(calories)}</span>
-                <span class="text-[11px] text-gray-400 font-medium">kcal</span>
-              </div>
+  <!-- Right Section: Analytics & Controls -->
+  <div class="flex items-center justify-center md:justify-between gap-6">
+    <!-- Calories -->
+    <div class="flex flex-col items-center justify-center">
+      <span class="block text-xl font-bold text-emerald-600 leading-none">${Math.round(calories)}</span>
+      <span class="text-[11px] text-gray-400 font-medium">kcal</span>
+    </div>
 
-              <!-- Macro Badges -->
-              <div class="flex items-center gap-2">
-                <span class="px-2 py-1 text-[11px] text-gray-600 bg-blue-50 rounded-lg font-medium">
-                  ${protein}g P
-                </span>
-                <span class="px-2 py-1 text-[11px] text-gray-600 bg-amber-50 rounded-lg font-medium">
-                  ${carbs}g C
-                </span>
-                <span class="px-2 py-1 text-[11px] text-gray-600 bg-purple-50 rounded-lg font-medium">
-                  ${fat}g F
-                </span>
-              </div>
+    <!-- Macro Badges -->
+    <div class="flex items-center gap-2">
+      <span class="px-2 py-1 text-[11px] text-gray-600 bg-blue-50 rounded-lg font-medium whitespace-nowrap">
+        ${protein}g P
+      </span>
+      <span class="px-2 py-1 text-[11px] text-gray-600 bg-amber-50 rounded-lg font-medium whitespace-nowrap">
+        ${carbs}g C
+      </span>
+      <span class="px-2 py-1 text-[11px] text-gray-600 bg-purple-50 rounded-lg font-medium whitespace-nowrap">
+        ${fat}g F
+      </span>
+    </div>
 
-              <!-- Delete Action -->
-              <button class="deleteBtn text-gray-300 hover:text-red-500 transition-colors pl-2" data-index="${index}">
-                <i class="fa-solid fa-trash-can"></i>
-              </button>
-            </div>
-          </div>`;
+    <!-- Delete Action -->
+    <button class="deleteBtn text-gray-300 hover:text-red-500 transition-colors pl-2" data-index="${index}">
+      <i class="fa-solid fa-trash-can"></i>
+    </button>
+  </div>
+</div>`;
       })
       .join("");
 
